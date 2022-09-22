@@ -1,0 +1,505 @@
+/* BREAKPOINTS 
+960px 
+740px
+*/
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;  /*Faz com que o tamanho do elemento, seja o seu tamanho total, e os valores definidos n aumentem o width definido (padding, margin, border)*/
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #252525;
+}
+
+
+/* Menu */
+
+.menu {
+    background: #252525;
+    padding: 20px 0;
+}
+
+.menu-container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+.menu-container::after, .menu-container::before {  /*faz com que o menu8 não quebre, e tenha o tamanho exato do seu conteúdo, já que todo o conteúdo tá flutuando*/
+    content: "";
+    display: table;
+    clear: both;
+}
+
+a.menu-logo { /*Faz a logo ficar presa a esquerda do header*/
+    display: block;
+    float: left;
+    margin-left: 10px;
+}
+
+.menu-nav {  /*Faz o menu ficar preso a direita do header*/
+    float: right;
+    margin-right: 10px;
+}
+
+.menu-nav li {
+    display: inline-block;
+}
+
+.menu-nav a {
+    display: block;  /*Aumenta o tamanho do item, facilitando a area do clique, junto com o padding*/
+    padding: 10px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 1.125em;
+}
+.menu nav a:hover {
+    color: #c17139;
+}
+
+@media (max-width:739px) {
+    .menu-container {
+        text-align: center;
+    }
+    a.menu-logo {
+        float: none;
+       margin: 0 auto; 
+    }
+    .menu-nav{
+        float: none;
+        clear: both;
+        margin-top: 15px;
+    }
+}
+
+/* Intro Site */
+
+.intro {
+    background: url(../img/bg-intro.jpg) no-repeat center center;
+    background-size: cover;
+    padding: 150px 0;
+    text-align: center;
+    color: #fff;
+}
+
+.intro h1 {
+    text-transform: uppercase;
+    font-size: 3em;
+}
+.intro h1::after {  /*Cria o tracinho entre o tpitulo e a frase principal*/
+    content: "";
+    display: block;
+    width: 20px;
+    height: 4px;
+    background-color: #fff;
+    margin: 10px auto;
+}
+
+.intro p {
+    font-style: italic;
+    font-size: 1.125em;
+}
+
+@media (max-width:739px) {
+    .intro {
+        padding: 60px;
+    }
+}
+
+/* Sobre */
+
+.sobre {
+    padding: 60px 0;
+}
+
+.sobre h2 {
+    font-size: 2.25em;
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.sobre-container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+.sobre-container::after, .sobre-container::before {  
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.sobre-item {
+    width: 460px;
+    float: left;
+    margin: 0 10px;
+}
+.sobre-item img {
+    max-width: 100%;
+    display: block;
+}
+.sobre-item h3 {
+    font-size: 2.25em;
+    line-height: 1em;
+    width: 220px;
+    background: #252525;
+    color: #fff;
+    font-style: italic;
+    font-weight: normal;
+    text-align: center;
+    padding: 5px 0 10px;
+    position: relative; /*Altera a sua ordem de posição e o coloca acima dos outrs objetos*/
+    top: -25px;
+}
+
+.sobre > p {
+    font-size: 1.125em;
+    line-height: 1.4em;
+    font-style: italic;
+    text-align: center;
+    margin: 20px auto;
+    max-width: 400px;
+}
+
+@media (min-width: 740px) and (max-width: 980px) {
+    .sobre-container {
+        max-width: 720px;
+    }
+    .sobre-item {
+        width: 340px;
+    }
+}
+
+@media (max-width:739px) {
+    .sobre h2 {
+        margin-bottom: 30px;
+    }
+    .sobre-container {
+        max-width: 300px;
+    }
+    .sobre-item {
+        width: 300px;
+        margin: 0;
+    }
+    .sobre > p {
+        font-size: 1em;
+    }
+}
+
+/* Produtos */
+
+.produtos {
+    background: #e7e4d8;
+    padding: 60px 0;
+    border-top: 3px solid #d6d3c8;
+    border-bottom: 3px solid #d6d3c8;
+}
+
+.produtos-container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+.produtos-container::after, .produtos-container::before {  
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.produtos-item {
+    width: 300px;
+    float: left;
+    margin: 0 10px 20px 10px;
+}
+
+.produtos-item h2 {
+    text-align: center;
+    font-size: 2.25em;
+    margin-bottom: 20px;
+}
+.produtos-item h2::before {  /*Cria as bolinhas que representam o café*/
+    content: "";
+    display: block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: currentColor; /*A propriedade currentColor define que a cor do item vai ser a cor padrão da tag a qual ela pertence*/
+    margin: 20px auto;
+    border: 5px solid #e7e4d8;
+    box-shadow: 0 0 0 10px currentColor;
+}
+#produtos-paulista::before { 
+    color: #492901;
+}
+#produtos-carioca::before {
+    color: #c17139;
+}
+#produtos-mineiro::before {
+    color: #d7a54d;
+}
+
+.produtos-item p {
+    font-size: .875em;
+    line-height: 1.4em;
+}
+
+.produtos-btn {
+    display: block;
+    width: 180px;
+    border: 3px solid;
+    color: #252525;
+    text-decoration: none;
+    font-size: 1.125em;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 15px 0;
+    margin: 20px auto 0 auto;
+}
+.produtos-btn:hover {
+    color: #c17139;
+}
+
+@media (min-width: 740px) and (max-width: 980px) {
+    .produtos-container {
+        max-width: 720px;
+    }
+    .produtos-item {
+        width: 220px;
+    }
+}
+
+@media (max-width:739px) {
+
+    .produtos-container {
+        max-width: 300px;
+    }
+    .produtos-item {
+        width: 300px;
+        margin: 0 auto 20px auto;
+    }
+
+}
+
+/* Locais */
+
+.locais {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+.locais-item {
+    clear: both;
+    margin: 60px auto;
+}
+.locais-item::after, .locais-item::before {  
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.locais-item img {
+    max-width: 460px;
+    display: block;
+    float: left;
+    margin: 0 10px;
+}
+
+.locais-item > div {
+    max-width: 460px;
+    float: left;
+    margin: 0 10px;
+}
+
+.locais-item h2 {
+    font-size: 2.25em;
+    margin-bottom: 20px;
+}
+
+.locais-item p {
+    font-size: 1.125em;
+    line-height: 1.4em;
+    max-width: 320px;
+    margin-bottom: 40px;
+}
+
+.locais-item a {
+    font-size: 1.125em;
+    text-decoration: none;
+    text-transform: uppercase;
+    border: 3px solid;
+    color: #252525;
+    padding: 10px 20px;
+}
+.locais-item a:hover { 
+    color: #c17139;
+}
+
+@media (min-width: 740px) and (max-width: 980px) {
+    .locais {
+        max-width: 720px;
+    }
+    .locais-item > div, .locais-item img {
+        width: 340px;
+    }
+    .locais-item h2 {
+        margin-bottom: 15px;
+    }
+    .locais-item p {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width:739px) {
+   .locais {
+        max-width: 300px;
+    }
+    .locais-item > div, .locais-item img {
+        width: 300px;
+        margin: 0;
+    }
+}
+
+
+/* Newsletter */
+
+.assine {
+    background-color: #e7e4d8;
+    padding: 30px 0;
+}
+
+.assine-container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+.assine-container::after, .assine-container::before {  
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.assine-info {
+    width: 460px;
+    margin: 0 10px;
+    float: left;
+}
+
+.assine-info h2 {
+    font-size: 2.25em;
+}
+
+.assine-info p {
+    font-size: 1.5em;
+    font-style: italic;
+}
+
+.assine form {
+    width: 460px;
+    margin: 10px 10px 0 10px;
+    float: left;
+}
+
+.assine form label {  /*Some com a Label visualmente, mas mantém ela no código, caso seja necessária*/
+    display: none;
+}
+
+.assine form input {
+    width: 320px;
+    border: 3px solid #252525;
+    background: none;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.5em;
+    font-style: italic;
+    padding: 10px;
+    float: left;
+}
+/* .assine form input:focus {     Esse comando muda a cor do input quando ele tá selecionado, n combinou aqui, mas serviu pra aprender.
+    border-color: #c17139;
+    outline: none;
+} */
+
+.assine button {
+    width: 140px;
+    border: none;
+    background-color: #252525;
+    font-size: 1.5em;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-transform: uppercase;
+    color: #fff;
+    padding: 13px 0;
+    cursor: pointer;
+}
+
+@media (min-width: 740px) and (max-width: 980px) {
+
+ .assine-container {
+     max-width: 720px;
+ }
+ .assine-info, .assine form, .assine input {
+    width: 340px;
+ }
+}
+
+@media (max-width:739px) {
+    .assine-container {
+        max-width: 300px;
+    }
+    .assine-info, .assine form, .assine input {
+       width: 300px;
+    }
+}
+
+
+
+/* Footer */
+
+.footer {
+    background-color: #d6d3c8;
+    padding: 40px 0;
+}
+
+.footer-container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+.footer-container::after, .footer-container::before {  
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.footer p {
+    float: left;
+    margin: 0 10px;
+    font-size: 1.125em;
+    line-height: 1.4em;
+}
+
+.footer img {
+    float: right;
+    margin: auto 10px;
+    display: block;
+}
+
+.footer a {
+    text-decoration: none;
+    font-weight:600;
+}
+.footer a:hover {
+    color: #c17139;
+}
+
+ @media (max-width:739px) {
+    .footer-container {
+        max-width: 300px;
+    }
+    .footer p {
+        width: 300px;
+        float: none;
+        margin: 0;
+    }
+    .footer img {
+        float: none;
+        margin: 20px 0;
+    }
+   }
